@@ -1,0 +1,80 @@
+<div class="">
+
+    <div class="container text-center">
+        <div class="container d-flex ms-5">
+
+            <div (click)="categoryProduct('')">
+                <a style="text-decoration: none; color: rgb(19, 140, 180);">
+                    <img src="https://i.postimg.cc/pTqswn6L/pexels-ovan-62689.jpg" alt="" class=" "
+                        style="width: 200px; height: 160px;">
+                    <h4 class="text-center">all products</h4>
+                </a>
+            </div>
+
+            <div (click)="categoryProduct(2)" class="mb-5 ms-5" style="">
+                <a style="text-decoration:none; color:rgb(19, 140, 180);" >
+                    <img src="https://i.postimg.cc/NM6ZnM1N/men-watches-wooden-table-79791301.webp" alt="" m
+                        style="width: 200px;height:160px">
+                    <h4 class="text-center">Watches</h4>
+                </a>
+            </div>
+
+            <div class="ms-5" (click)="categoryProduct(3)">
+                <a style="text-decoration:none; color:rgb(19, 140, 180);" >
+                    <img src="https://i.postimg.cc/nrVJjY1J/Top-laptop-brands-in-India.webp" alt=""
+                        style="width:200px; height: 160px;">
+                    <h4 class="text-center">Laptops</h4>
+                </a>
+            </div>
+
+            <div class="mb-5 ms-5" (click)="categoryProduct(5)">
+                <a style="text-decoration:none; color:rgb(19, 140, 180);" >
+                    <img src="https://i.postimg.cc/fbbmK6Tt/download-6.jpg" alt="" style="width: 200px; height: 160px;">
+                    <h4 class="text-center">Mobile phones</h4>
+                </a>
+            </div>
+
+            <div class="mb-5 ms-5" (click)="categoryProduct(6)">
+                <a style="text-decoration:none; color: rgb(19, 140, 180);" >
+                    <img src="https://i.postimg.cc/gJrcvygh/images-3.jpg" alt="" style="width: 200px; height: 160px;">
+                    <h4 class="text-center">Headphones</h4>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+
+
+
+
+
+    <section class="py-5">
+        <div class="container px-4 px-lg-5 mt-5">
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                <div *ngFor="let i of catgoryArray | search:searchString:'productName' " class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <img class="card-img-top" src="{{i.productImg}}" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">{{i.productName}}</h5>
+                                <!-- Product price-->
+                                {{i.price}} Rs
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto"
+                                    href="product/view/{{i.id}}">View </a></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
